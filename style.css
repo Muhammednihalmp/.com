@@ -7,16 +7,18 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a, #1e1e1e); /* Single background */
+    background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
     color: #fff;
     min-height: 100vh;
     overflow-x: hidden;
+    font-size: 16px; /* Base font size for better scaling */
+    line-height: 1.5; /* Improved readability */
 }
 
 /* Navbar */
 .navbar {
     background: #00eaff;
-    padding: 1rem;
+    padding: 0.75rem;
     position: fixed;
     width: 100%;
     top: 0;
@@ -31,16 +33,16 @@ body {
     color: #000000;
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
-    font-size: 1.5rem;
-    padding-left: 2rem;
+    font-size: clamp(1.25rem, 4vw, 1.5rem); /* Responsive font size */
+    padding-left: clamp(1rem, 4vw, 2rem); /* Responsive padding */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    padding-right: 2rem;
+    gap: clamp(1rem, 3vw, 2rem); /* Responsive gap */
+    padding-right: clamp(1rem, 4vw, 2rem);
 }
 
 .nav-links li a {
@@ -49,6 +51,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: clamp(0.75rem, 2vw, 1rem); /* Responsive font size */
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -60,55 +63,26 @@ body {
 .social-icons {
     display: flex;
     gap: 1rem;
-    padding-right: 2rem;
+    padding-right: clamp(1rem, 4vw, 2rem);
 }
 
 .social-icons a img {
-    width: 24px; /* Adjust size to match the image */
-    height: 24px;
-    filter: brightness(0) invert(1); /* White icons on dark background */
+    width: clamp(20px, 5vw, 24px); /* Responsive size */
+    height: clamp(20px, 5vw, 24px);
+    filter: brightness(0) invert(1);
     transition: filter 0.3s;
 }
 
 .social-icons a img:hover {
-    filter: brightness(0) invert(0) sepia(1) hue-rotate(180deg) saturate(2); /* Cyan on hover */
+    filter: brightness(0) invert(0) sepia(1) hue-rotate(180deg) saturate(2);
 }
 
 .nav-toggle {
     display: none;
-    color: #00eaff;
-    font-size: 2rem;
+    color: #000000;
+    font-size: 1.5rem;
     cursor: pointer;
     padding: 0 1rem;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(10, 10, 10, 0.95);
-        padding: 1rem 0;
-    }
-
-    .nav-links.mobile-menu-open {
-        display: flex;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .logo {
-        padding-left: 1rem;
-    }
-
-    .social-icons {
-        display: none; /* Hide social icons on mobile for now */
-    }
 }
 
 /* Hero Section */
@@ -121,6 +95,8 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
+    padding: 0 1rem; /* Add padding for small screens */
+    margin-top: 60px; /* Account for fixed navbar */
 }
 
 .hero::before {
@@ -134,14 +110,14 @@ body {
 
 .hero-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 4.5rem;
+    font-size: clamp(2rem, 8vw, 4.5rem); /* Responsive font size */
     color: #00eaff;
     text-shadow: 0 0 20px #00eaff;
     animation: slideInLeft 1.5s ease-out;
 }
 
 .hero-subtitle {
-    font-size: 1.8rem;
+    font-size: clamp(1rem, 4vw, 1.8rem); /* Responsive font size */
     color: #ff00ff;
     margin: 1rem 0;
     text-shadow: 0 0 10px #ff00ff;
@@ -149,7 +125,7 @@ body {
 }
 
 .neon-btn {
-    padding: 1rem 2rem;
+    padding: clamp(0.75rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2rem);
     background: transparent;
     border: 2px solid #00eaff;
     color: #00eaff;
@@ -160,6 +136,7 @@ body {
     cursor: pointer;
     transition: all 0.4s;
     box-shadow: 0 0 15px #00eaff;
+    font-size: clamp(0.85rem, 2.5vw, 1rem); /* Responsive font size */
 }
 
 .neon-btn:hover {
@@ -171,30 +148,37 @@ body {
 
 /* Main Content */
 main {
-    background: transparent; /* No separate background for sections */
+    background: transparent;
+    padding-top: 60px; /* Account for fixed navbar */
+    width: 100%;
 }
 
 .section {
-    padding: 6rem 2rem;
+    padding: clamp(3rem, 10vw, 6rem) clamp(1rem, 5vw, 2rem);
     position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .section h2 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
+    font-size: clamp(1.75rem, 6vw, 3rem); /* Responsive font size */
     color: #ff00ff;
     text-shadow: 0 0 15px #ff00ff;
-    margin-bottom: 3rem;
+    margin-bottom: clamp(1.5rem, 5vw, 3rem);
     animation: fadeInUp 1s ease-out;
+    text-align: center;
 }
 
 .glass-card {
     background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
+    padding: clamp(1.5rem, 5vw, 2rem);
     border-radius: 15px;
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 800px;
+    max-width: 100%;
+    width: clamp(300px, 90%, 800px);
     margin: 0 auto;
     box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
     animation: float 4s infinite ease-in-out;
@@ -203,19 +187,23 @@ main {
 /* Projects */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(1rem, 3vw, 2rem);
+    width: 100%;
 }
 
 .project-card {
     background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
+    padding: clamp(1.5rem, 4vw, 2rem);
     border-radius: 15px;
     border: 1px solid #00eaff;
     transition: all 0.5s;
     cursor: pointer;
     box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -227,10 +215,14 @@ main {
 .project-card h3 {
     color: #00eaff;
     font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.25rem, 4vw, 1.5rem); /* Responsive font size */
+    margin-bottom: 1rem;
 }
 
 .project-card p {
     color: #ccc;
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
+    flex-grow: 1;
 }
 
 .project-details {
@@ -239,15 +231,20 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2000;
-    width: 90%;
-    max-width: 900px; /* Larger popup */
-    padding: 3rem;
+    width: clamp(300px, 90%, 900px); /* Responsive width */
+    max-width: 90vw;
+    padding: clamp(1.5rem, 5vw, 3rem);
     text-align: center;
+    background: rgba(10, 10, 10, 0.95);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    border: 1px solid #00eaff;
+    box-shadow: 0 0 30px #00eaff;
 }
 
 .project-img {
     width: 100%;
-    max-height: 300px;
+    max-height: clamp(200px, 50vw, 300px); /* Responsive height */
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1.5rem;
@@ -259,6 +256,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #contact input, #contact textarea {
@@ -267,8 +267,9 @@ main {
     border: 1px solid #00eaff;
     border-radius: 10px;
     color: #fff;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
     transition: all 0.3s;
+    width: 100%;
 }
 
 #contact input:focus, #contact textarea:focus {
@@ -281,13 +282,19 @@ main {
     color: #aaa;
 }
 
+#contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
 /* Footer */
 footer {
     background: rgba(10, 10, 10, 0.9);
-    padding: 2rem;
+    padding: clamp(1.5rem, 5vw, 2rem);
     text-align: center;
     color: #00eaff;
     text-shadow: 0 0 10px #00eaff;
+    font-size: clamp(0.85rem, 3vw, 1rem); /* Responsive font size */
 }
 
 /* Animations */
@@ -325,35 +332,8 @@ footer {
     margin-top: 1rem;
     color: #ff00ff;
     text-shadow: 0 0 10px #ff00ff;
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(10, 10, 10, 0.95);
-        padding: 1rem 0;
-    }
-
-    .nav-links.mobile-menu-open {
-        display: flex;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .hero-title { font-size: 3rem; }
-    .hero-subtitle { font-size: 1.2rem; }
-
-    .project-details { max-width: 90%; padding: 2rem; }
-}
-
 
 /* Games Section Enhancements */
 #gameCanvas {
@@ -363,11 +343,13 @@ footer {
     margin: 1rem auto;
     display: block;
     box-shadow: 0 0 15px #00eaff;
+    width: clamp(300px, 90%, 600px); /* Responsive width */
+    height: clamp(150px, 30vw, 300px); /* Responsive height */
 }
 
 #scoreDisplay, #typingResult {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
     color: #ff00ff;
     text-shadow: 0 0 10px #ff00ff;
     text-align: center;
@@ -376,19 +358,23 @@ footer {
 
 #typingText {
     color: #00eaff;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3.5vw, 1.2rem); /* Responsive font size */
     margin: 1rem 0;
     text-align: center;
+    padding: 0 1rem;
 }
 
 #typingInput {
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #00eaff;
     border-radius: 10px;
     color: #fff;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
     transition: all 0.3s;
 }
 
@@ -403,10 +389,14 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
     margin-top: 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .calc-buttons button {
-    padding: 1rem;
+    padding: clamp(0.5rem, 2vw, 1rem);
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #00eaff;
     color: #00eaff;
@@ -414,6 +404,7 @@ footer {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s;
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
 }
 
 .calc-buttons button:hover {
@@ -424,23 +415,111 @@ footer {
 
 #calcInput {
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto 1rem auto;
+    display: block;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #00eaff;
     border-radius: 10px;
     color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1rem, 3.5vw, 1.2rem); /* Responsive font size */
     text-align: right;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #gameCanvas {
-        width: 100%;
-        height: 150px;
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .section {
+        padding: 4rem 1.5rem;
     }
+    
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        padding: 1rem 0;
+        gap: 1rem;
+        z-index: 1001;
+    }
+
+    .nav-links.mobile-menu-open {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .social-icons {
+        padding-right: 1rem;
+        gap: 0.5rem;
+    }
+    
+    /* Hide social icons on very small screens */
+    @media (max-width: 480px) {
+        .social-icons {
+            display: none;
+        }
+    }
+    
+    .section {
+        padding: 3rem 1rem;
+    }
+    
+    .glass-card {
+        padding: 1.5rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+    
     .calc-buttons {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.25rem;
+    }
+    
+    /* For ultra-small screens */
+    @media (max-width: 380px) {
+        .calc-buttons {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .hero-title {
+            font-size: 1.75rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+    }
+}
+
+/* Layout improvements for wider screens */
+@media (min-width: 1400px) {
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    body {
+        font-size: 18px;
     }
 }
