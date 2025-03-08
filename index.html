@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Nihal MP - Computer Engineer, Ethical Hacker, Web Developer">
+    <meta name="author" content="Nihal MP">
+    <title>Nihal MP | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">NIHAL M P</div> <!-- Added logo/name -->
+            <div class="nav-toggle" onclick="toggleMobileMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="tel:7736675990"><img src="https://www.logoai.com/oss/icons/2023/03/14/2c0a2eedfffb86631a01415c44c13710.svg" alt="Phone"></a>
+                <a href="https://www.instagram.com/m_n1h4l._?igsh=Ym9pdDBscmMwNGZt"><img src="https://static.thenounproject.com/png/6204297-200.png" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/muhammad-nihal-mp-96a346283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="https://th.bing.com/th/id/R.1307a2648e71d531704a0f5a270ea966?rik=xoRqLWhe398tpw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2flinkedin-icon-vector-png-linkedin-icon-1600.png&ehk=Y%2fXpGk6BQiw3%2b%2fPxGMxOFCCMpghIuGI7G43LINh6qpE%3d&risl=&pid=ImgRaw&r=0" alt="LinkedIn"></a>
+                <a href="https://github.com/Muhammednihalmp"><img src="https://www.logoai.com/oss/icons/2022/09/09/b2bf2291ae8f48d868185246b48b5ab8.svg" alt="GitHub"></a>
+                <a href="https://x.com/Nihal_mp_?t=yk5Dxss8CJWabrBkkhj3Dw&s=08"><img src="https://www.logoai.com/oss/icons/2023/05/09/e59a8c6c689fa244bc525f3cadf07e3c.svg" alt="X"></a>
+            </div>
+        </nav>
+        <div class="hero" id="home">
+            <h1 class="hero-title">Nihal MP</h1>
+            <p class="hero-subtitle">Engineer | Hacker | Creator</p>
+            <a href="#projects" class="btn neon-btn">Explore My Work</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="content glass-card">
+                <p>I'm a computer engineering enthusiast specializing in ethical hacking and web development, focused on building secure and innovative solutions..</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card" onclick="showProjectDetails('project1')">
+                    <h3>Attendance System</h3>
+                    <p>Smart attendance management</p>
+                </div>
+                <div class="project-card" onclick="showProjectDetails('project2')">
+                    <h3>Tic Tac Toe</h3>
+                    <p>Interactive JS game</p>
+                </div>
+                <div class="project-card" onclick="showProjectDetails('project3')">
+                    <h3>Web Camera</h3>
+                    <p>Browser-based media capture</p>
+                </div>
+                <div class="project-card" onclick="showProjectDetails('project4')">
+                    <h3>Web-cloning</h3>
+                    <p>Python website cloner</p>
+                </div>
+            </div>
+            <div id="projectDetails" class="project-details glass-card hidden">
+                <img id="projectImage" src="" alt="" class="project-img">
+                <h3 id="projectTitle"></h3>
+                <p id="projectDescription"></p>
+                <br>
+                <button onclick="hideProjectDetails()" class="neon-btn">Close</button>
+            </div>
+        </section>
+
+        <section id="games" class="section">
+            <h2>Games</h2>
+            <div class="content glass-card">
+                <h3>Dino Jump</h3>
+                <p>Press Space to jump over obstacles!</p>
+                <canvas id="gameCanvas" width="600" height="200"></canvas>
+                <p id="scoreDisplay">Score: 0</p>
+                <button onclick="startGame()" class="neon-btn">Start Game</button>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <div class="content glass-card">
+                <p>Let’s connect for collaborations or a friendly chat!</p>
+                <br>
+                <form id="contactForm" onsubmit="return sender();">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="neon-btn">Send</button>
+                </form>
+                <div id="responseMessage" class="hidden"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Nihal MP | Designed with Passion</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
