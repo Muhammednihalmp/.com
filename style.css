@@ -343,33 +343,33 @@ footer {
     margin: 1rem auto;
     display: block;
     box-shadow: 0 0 15px #00eaff;
-    width: clamp(300px, 90%, 600px); /* Responsive width */
-    height: clamp(150px, 30vw, 300px); /* Responsive height */
+    width: clamp(250px, 80%, 600px); /* Responsive width */
+    height: clamp(150px, 40vw, 300px); /* Responsive height */
 }
 
 #scoreDisplay, #typingResult {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
+    font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive font size */
     color: #ff00ff;
     text-shadow: 0 0 10px #ff00ff;
     text-align: center;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 #typingText {
     color: #00eaff;
-    font-size: clamp(1rem, 3.5vw, 1.2rem); /* Responsive font size */
-    margin: 1rem 0;
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem); /* Responsive font size */
+    margin: 0.5rem 0;
     text-align: center;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
 }
 
 #typingInput {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    margin: 0.5rem auto;
     display: block;
-    padding: 1rem;
+    padding: 0.8rem;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #00eaff;
     border-radius: 10px;
@@ -384,47 +384,40 @@ footer {
     outline: none;
 }
 
-.calc-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
-    margin-top: 1rem;
-    width: 100%;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+    #gameCanvas {
+        width: 90%;
+        height: 200px;
+    }
+
+    #scoreDisplay, #typingResult {
+        font-size: 1rem;
+    }
+
+    #typingText {
+        font-size: 0.95rem;
+    }
+
+    #typingInput {
+        padding: 0.7rem;
+    }
 }
 
-.calc-buttons button {
-    padding: clamp(0.5rem, 2vw, 1rem);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #00eaff;
-    color: #00eaff;
-    font-family: 'Orbitron', sans-serif;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
-}
+@media (max-width: 480px) {
+    #gameCanvas {
+        width: 100%;
+        height: 180px;
+    }
 
-.calc-buttons button:hover {
-    background: #00eaff;
-    color: #0a0a0a;
-    box-shadow: 0 0 15px #00eaff;
-}
+    #scoreDisplay, #typingResult {
+        font-size: 0.9rem;
+    }
 
-#calcInput {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 1rem auto;
-    display: block;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #00eaff;
-    border-radius: 10px;
-    color: #fff;
-    font-size: clamp(1rem, 3.5vw, 1.2rem); /* Responsive font size */
-    text-align: right;
+    #typingInput {
+        width: 95%;
+        padding: 0.6rem;
+    }
 }
 
 /* Enhanced Mobile Responsiveness */
@@ -432,7 +425,7 @@ footer {
     .section {
         padding: 4rem 1.5rem;
     }
-    
+
     .project-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
@@ -442,7 +435,7 @@ footer {
     .navbar {
         padding: 0.5rem;
     }
-    
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -468,43 +461,43 @@ footer {
         padding-right: 1rem;
         gap: 0.5rem;
     }
-    
+
     /* Hide social icons on very small screens */
     @media (max-width: 480px) {
         .social-icons {
             display: none;
         }
     }
-    
+
     .section {
         padding: 3rem 1rem;
     }
-    
+
     .glass-card {
         padding: 1.5rem;
     }
-    
+
     .project-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 0.5rem;
     }
-    
+
     .calc-buttons {
         grid-template-columns: repeat(4, 1fr);
         gap: 0.25rem;
     }
-    
+
     /* For ultra-small screens */
     @media (max-width: 380px) {
         .calc-buttons {
             grid-template-columns: repeat(2, 1fr);
         }
-        
+
         .hero-title {
             font-size: 1.75rem;
         }
-        
+
         .hero-subtitle {
             font-size: 1rem;
         }
@@ -518,7 +511,7 @@ footer {
         max-width: 1400px;
         margin: 0 auto;
     }
-    
+
     body {
         font-size: 18px;
     }
